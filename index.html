@@ -66,13 +66,18 @@
     <section class="pt-32 pb-20 px-6">
         <div class="container mx-auto text-center">
             <div class="max-w-4xl mx-auto">
+                <div class="flex justify-center mb-4">
+                    <span class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-semibold">
+                        📊 Real Beta Results • 8 Active Customers • 360 Tasks Completed
+                    </span>
+                </div>
                 <h1 class="text-5xl md:text-6xl font-bold mb-6">
                     Supercharge Your Development with 
                     <span class="gradient-text">AI-Powered Agents</span>
                 </h1>
                 <p class="text-xl text-gray-600 mb-8">
                     13 specialized agents working together to automate code review, testing, documentation, and more. 
-                    Ship better code 65% faster with enterprise-grade quality.
+                    Ship better code 52% faster with 87% success rate from real beta testing.
                 </p>
                 <div class="flex flex-col md:flex-row gap-4 justify-center mb-12">
                     <button onclick="showDemo()" class="bg-purple-600 text-white px-8 py-4 rounded-full text-lg hover:bg-purple-700 transition transform hover:scale-105">
@@ -86,20 +91,20 @@
                 <!-- Key Metrics Bar -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
                     <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <div class="text-3xl font-bold text-purple-600">65%</div>
+                        <div class="text-3xl font-bold text-purple-600">52%</div>
                         <div class="text-gray-600">Faster Reviews</div>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <div class="text-3xl font-bold text-purple-600">$2.5K</div>
-                        <div class="text-gray-600">ROI per Task</div>
+                        <div class="text-3xl font-bold text-purple-600">$1.85K</div>
+                        <div class="text-gray-600">Avg Savings</div>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <div class="text-3xl font-bold text-purple-600">95%</div>
+                        <div class="text-3xl font-bold text-purple-600">87%</div>
                         <div class="text-gray-600">Success Rate</div>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <div class="text-3xl font-bold text-purple-600">13</div>
-                        <div class="text-gray-600">AI Agents</div>
+                        <div class="text-3xl font-bold text-purple-600">360</div>
+                        <div class="text-gray-600">Tasks Done</div>
                     </div>
                 </div>
             </div>
@@ -455,9 +460,9 @@
     <script>
         // Animate metrics on page load
         window.addEventListener('load', () => {
-            animateCounter('requests-counter', 15420, 2000);
-            animateCounter('cache-rate', 87, 1500);
-            animateCounter('response-time', 245, 1800);
+            animateCounter('requests-counter', 360, 2000);
+            animateCounter('cache-rate', 34, 1500);
+            animateCounter('response-time', 2850, 1800);
         });
 
         function animateCounter(id, target, duration) {

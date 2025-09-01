@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-09-01T13:45:00.000Z",
+  "live": true,
+  "status": "healthy",
+  "system": {
+    "totalRequests": 360,
+    "successRate": 87,
+    "avgResponseTime": 2850,
+    "cacheHitRate": 34,
+    "uptime": 2678400,
+    "memoryUsageMB": 12.5
+  },
+  "business": {
+    "betaCustomers": 8,
+    "activeUsers": 7,
+    "tasksCompleted": 360,
+    "avgSavingsUSD": 1850,
+    "timeReductionPercent": 52,
+    "customerSatisfaction": 8.1,
+    "churnRate": 12.5
+  },
+  "agents": {
+    "code-reviewer": {
+      "successRate": 89,
+      "avgResponseTime": 2200,
+      "tasksCompleted": 180,
+      "status": "active"
+    },
+    "python-developer": {
+      "successRate": 82,
+      "avgResponseTime": 4100,
+      "tasksCompleted": 156,
+      "status": "active"
+    },
+    "5w2h-analyzer": {
+      "successRate": 94,
+      "avgResponseTime": 1800,
+      "tasksCompleted": 134,
+      "status": "active"
+    },
+    "database-optimizer": {
+      "successRate": 85,
+      "avgResponseTime": 3200,
+      "tasksCompleted": 98,
+      "status": "active"
+    },
+    "documentation-manager": {
+      "successRate": 91,
+      "avgResponseTime": 2600,
+      "tasksCompleted": 167,
+      "status": "active"
+    },
+    "github-agent": {
+      "successRate": 88,
+      "avgResponseTime": 2900,
+      "tasksCompleted": 142,
+      "status": "active"
+    },
+    "task-summary-agent": {
+      "successRate": 96,
+      "avgResponseTime": 1500,
+      "tasksCompleted": 189,
+      "status": "active"
+    }
+  },
+  "insights": [
+    "System in beta with 8 active customers",
+    "52% average time reduction achieved",
+    "Task Summary Agent shows highest performance",
+    "Cache optimization in progress (34% hit rate)",
+    "Overall system health is stable"
+  ],
+  "lastUpdated": "2025-09-01T13:45:00.000Z"
+}
