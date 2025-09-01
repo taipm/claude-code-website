@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Claude Code System</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-2xl font-bold text-purple-600">Claude Code</a>
+                    <span class="text-sm bg-red-100 text-red-800 px-3 py-1 rounded-full">Admin Panel</span>
+                </div>
+                <div class="text-sm text-gray-600">
+                    Live Beta Metrics
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 py-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Beta Program Dashboard</h1>
+            <p class="text-gray-600">Monitor signups, customer activity, and system performance</p>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Total Signups</p>
+                        <p class="text-2xl font-bold text-blue-600" id="totalSignups">8</p>
+                        <p class="text-xs text-green-600">+2 this week</p>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Active Trials</p>
+                        <p class="text-2xl font-bold text-green-600" id="activeTrials">7</p>
+                        <p class="text-xs text-green-600">87.5% active</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Total Tasks</p>
+                        <p class="text-2xl font-bold text-purple-600" id="totalTasks">360</p>
+                        <p class="text-xs text-green-600">45 avg/customer</p>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Success Rate</p>
+                        <p class="text-2xl font-bold text-emerald-600" id="overallSuccessRate">87%</p>
+                        <p class="text-xs text-green-600">+2% vs target</p>
+                    </div>
+                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Signups -->
+        <div class="bg-white rounded-lg shadow mb-8">
+            <div class="p-6 border-b">
+                <h2 class="text-xl font-bold text-gray-900">Recent Beta Signups</h2>
+                <p class="text-gray-600">Latest customer registrations</p>
+            </div>
+            <div class="p-6">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b">
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Customer</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Company</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Plan</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Use Case</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Status</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Join Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="signupsTable">
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center">
+                                        <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=6366f1&color=fff" 
+                                             class="w-8 h-8 rounded-full mr-3" alt="">
+                                        <div>
+                                            <div class="font-medium text-gray-900">Sarah Chen</div>
+                                            <div class="text-sm text-gray-600">s.chen@techcorp.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <div class="font-medium">TechCorp Inc</div>
+                                    <div class="text-sm text-gray-600">51-200 employees</div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">Professional</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="text-sm text-gray-600">Code Review</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Active Trial</span>
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-600">2 days ago</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center">
+                                        <img src="https://ui-avatars.com/api/?name=Mike+Rodriguez&background=10b981&color=fff" 
+                                             class="w-8 h-8 rounded-full mr-3" alt="">
+                                        <div>
+                                            <div class="font-medium text-gray-900">Mike Rodriguez</div>
+                                            <div class="text-sm text-gray-600">mike.r@startupxyz.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <div class="font-medium">StartupXYZ</div>
+                                    <div class="text-sm text-gray-600">11-50 employees</div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Starter</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="text-sm text-gray-600">Development</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Active Trial</span>
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-600">5 days ago</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center">
+                                        <img src="https://ui-avatars.com/api/?name=Jessica+Park&background=f59e0b&color=fff" 
+                                             class="w-8 h-8 rounded-full mr-3" alt="">
+                                        <div>
+                                            <div class="font-medium text-gray-900">Jessica Park</div>
+                                            <div class="text-sm text-gray-600">j.park@enterprise.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <div class="font-medium">Enterprise Solutions</div>
+                                    <div class="text-sm text-gray-600">1000+ employees</div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">Enterprise</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="text-sm text-gray-600">Documentation</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Evaluating</span>
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-600">1 week ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agent Performance -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow">
+                <div class="p-6 border-b">
+                    <h2 class="text-xl font-bold text-gray-900">Agent Performance</h2>
+                    <p class="text-gray-600">Success rates across all agents</p>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <span class="text-lg mr-2">🎯</span>
+                                <span class="font-medium">5W2H Analyzer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-600 mr-2">96%</span>
+                                <div class="w-16 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 96%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <span class="text-lg mr-2">📊</span>
+                                <span class="font-medium">Task Summary</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-600 mr-2">94%</span>
+                                <div class="w-16 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 94%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <span class="text-lg mr-2">📚</span>
+                                <span class="font-medium">Documentation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-600 mr-2">91%</span>
+                                <div class="w-16 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 91%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <span class="text-lg mr-2">🔍</span>
+                                <span class="font-medium">Code Reviewer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-600 mr-2">89%</span>
+                                <div class="w-16 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 89%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <span class="text-lg mr-2">🔗</span>
+                                <span class="font-medium">GitHub Agent</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-600 mr-2">88%</span>
+                                <div class="w-16 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow">
+                <div class="p-6 border-b">
+                    <h2 class="text-xl font-bold text-gray-900">Customer Feedback</h2>
+                    <p class="text-gray-600">Latest reviews from beta customers</p>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">Sarah C.</span>
+                            </div>
+                            <p class="text-sm text-gray-700">"The code reviewer caught issues we missed. Saved us 6 hours on the last sprint."</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">Mike R.</span>
+                            </div>
+                            <p class="text-sm text-gray-700">"Documentation generation is incredible. Our docs are finally up to date!"</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">Jessica P.</span>
+                            </div>
+                            <p class="text-sm text-gray-700">"The 5W2H analysis helped us identify root causes we couldn't see before."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate real-time updates
+        function updateMetrics() {
+            // In a real app, this would fetch from your analytics API
+            console.log('Metrics updated');
+        }
+
+        // Auto-refresh every 30 seconds
+        setInterval(updateMetrics, 30000);
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Admin dashboard loaded');
+        });
+    </script>
+</body>
+</html>

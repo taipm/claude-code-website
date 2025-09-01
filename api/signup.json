@@ -1,0 +1,71 @@
+{
+  "endpoint": "/api/signup",
+  "method": "POST",
+  "description": "Customer registration API endpoint",
+  "status": "demo",
+  "lastUpdated": "2025-09-01T13:45:00.000Z",
+  "demo": {
+    "message": "This is a demo API response for GitHub Pages",
+    "note": "In production, this would be handled by your backend server"
+  },
+  "expectedPayload": {
+    "fullName": "string",
+    "email": "string",
+    "company": "string",
+    "jobTitle": "string",
+    "companySize": "string",
+    "phone": "string (optional)",
+    "useCase": "string",
+    "teamSize": "string",
+    "painPoints": "string (optional)",
+    "plan": "string",
+    "source": "string (optional)",
+    "terms": "boolean",
+    "newsletter": "boolean (optional)"
+  },
+  "responses": {
+    "200": {
+      "success": true,
+      "message": "Registration successful",
+      "userId": "demo_user_123",
+      "trialEndDate": "2025-09-15T13:45:00.000Z",
+      "plan": "professional",
+      "nextSteps": [
+        "Check email for setup instructions",
+        "Join Discord community",
+        "Schedule onboarding call"
+      ]
+    },
+    "400": {
+      "success": false,
+      "error": "Validation failed",
+      "details": ["Email is required", "Company name is required"]
+    },
+    "409": {
+      "success": false,
+      "error": "Email already registered",
+      "suggestion": "Try signing in instead"
+    },
+    "500": {
+      "success": false,
+      "error": "Server error",
+      "message": "Please try again later"
+    }
+  },
+  "integration": {
+    "crm": "HubSpot",
+    "email": "SendGrid",
+    "analytics": "Mixpanel",
+    "notifications": "Slack + Telegram"
+  },
+  "workflow": [
+    "1. Validate form data",
+    "2. Check if email exists",
+    "3. Create user account",
+    "4. Send welcome email",
+    "5. Add to CRM",
+    "6. Notify sales team",
+    "7. Schedule follow-up",
+    "8. Return success response"
+  ]
+}

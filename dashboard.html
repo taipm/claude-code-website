@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Claude Code System</title>
+    <meta name="description" content="Your Claude Code System dashboard - Manage agents, track usage, and monitor performance">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .agent-card:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        .metric-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .sidebar-link.active {
+            background-color: #6366f1;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-2xl font-bold text-purple-600">Claude Code</a>
+                    <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full">Trial Active</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-sm text-gray-600">
+                        Trial ends: <span id="trialEndDate" class="font-semibold">--</span>
+                    </div>
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-gray-600 hover:text-purple-600">
+                            <img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff" 
+                                 class="w-8 h-8 rounded-full" alt="Profile">
+                            <span id="userName">User</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-sm h-screen">
+            <div class="p-6">
+                <nav class="space-y-2">
+                    <a href="#overview" class="sidebar-link active flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        <span>Overview</span>
+                    </a>
+                    
+                    <a href="#agents" class="sidebar-link flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <span>Agents</span>
+                    </a>
+                    
+                    <a href="#usage" class="sidebar-link flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        <span>Usage & Analytics</span>
+                    </a>
+                    
+                    <a href="#settings" class="sidebar-link flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+                
+                <div class="mt-8 p-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white">
+                    <h3 class="font-semibold mb-2">Upgrade to Pro</h3>
+                    <p class="text-sm text-purple-100 mb-3">Get unlimited access to all agents</p>
+                    <button class="bg-white text-purple-600 px-4 py-2 rounded-md text-sm font-semibold hover:bg-gray-100 transition">
+                        Upgrade Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8">
+            <!-- Welcome Section -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Welcome back, <span id="welcomeName">User</span>!</h1>
+                <p class="text-gray-600">Here's what's happening with your Claude Code System today.</p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600">Tasks Completed</p>
+                            <p class="text-2xl font-bold text-green-600" id="tasksCompleted">0</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600">Active Agents</p>
+                            <p class="text-2xl font-bold text-blue-600" id="activeAgents">0</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600">Time Saved</p>
+                            <p class="text-2xl font-bold text-purple-600" id="timeSaved">0h</p>
+                        </div>
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600">Success Rate</p>
+                            <p class="text-2xl font-bold text-emerald-600" id="successRate">0%</p>
+                        </div>
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="bg-white rounded-lg shadow mb-8">
+                <div class="p-6 border-b">
+                    <h2 class="text-xl font-bold text-gray-900">Quick Actions</h2>
+                    <p class="text-gray-600">Get started with your most common tasks</p>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <button class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition text-left">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Review Code</h3>
+                                <p class="text-sm text-gray-600">Start automated code review</p>
+                            </div>
+                        </button>
+                        
+                        <button class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition text-left">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Generate Docs</h3>
+                                <p class="text-sm text-gray-600">Create project documentation</p>
+                            </div>
+                        </button>
+                        
+                        <button class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition text-left">
+                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Optimize Database</h3>
+                                <p class="text-sm text-gray-600">Analyze query performance</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Agents -->
+            <div class="bg-white rounded-lg shadow">
+                <div class="p-6 border-b">
+                    <h2 class="text-xl font-bold text-gray-900">Your AI Agents</h2>
+                    <p class="text-gray-600">Specialized agents available in your current plan</p>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="agentsGrid">
+                        <!-- Agents will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load user data from signup
+        function loadUserData() {
+            const signupData = localStorage.getItem('claudeCodeSignup');
+            if (signupData) {
+                const data = JSON.parse(signupData);
+                document.getElementById('userName').textContent = data.fullName || 'User';
+                document.getElementById('welcomeName').textContent = data.fullName?.split(' ')[0] || 'User';
+                
+                if (data.trialEndDate) {
+                    const endDate = new Date(data.trialEndDate);
+                    document.getElementById('trialEndDate').textContent = endDate.toLocaleDateString();
+                }
+            }
+        }
+
+        // Load dashboard metrics
+        function loadMetrics() {
+            // Simulate real user metrics based on trial usage
+            const metrics = {
+                tasksCompleted: Math.floor(Math.random() * 25) + 5,
+                activeAgents: 5, // Trial includes 5 agents
+                timeSaved: Math.floor(Math.random() * 20) + 5,
+                successRate: Math.floor(Math.random() * 15) + 85
+            };
+            
+            document.getElementById('tasksCompleted').textContent = metrics.tasksCompleted;
+            document.getElementById('activeAgents').textContent = metrics.activeAgents;
+            document.getElementById('timeSaved').textContent = metrics.timeSaved + 'h';
+            document.getElementById('successRate').textContent = metrics.successRate + '%';
+        }
+
+        // Load available agents
+        function loadAgents() {
+            const trialAgents = [
+                {
+                    name: 'Code Reviewer',
+                    description: 'Automated code quality and security analysis',
+                    status: 'active',
+                    successRate: 95,
+                    icon: '🔍'
+                },
+                {
+                    name: 'Python Developer',
+                    description: 'AI-powered Python development and optimization',
+                    status: 'active',
+                    successRate: 90,
+                    icon: '🐍'
+                },
+                {
+                    name: 'Documentation Manager',
+                    description: 'Technical documentation generation and management',
+                    status: 'active',
+                    successRate: 92,
+                    icon: '📚'
+                },
+                {
+                    name: 'Database Optimizer',
+                    description: 'Query performance analysis and optimization',
+                    status: 'active',
+                    successRate: 88,
+                    icon: '💾'
+                },
+                {
+                    name: '5W2H Analyzer',
+                    description: 'Systematic problem analysis methodology',
+                    status: 'active',
+                    successRate: 96,
+                    icon: '🎯'
+                }
+            ];
+
+            const agentsGrid = document.getElementById('agentsGrid');
+            agentsGrid.innerHTML = trialAgents.map(agent => `
+                <div class="agent-card p-4 border border-gray-200 rounded-lg hover:shadow-md transition cursor-pointer">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="text-2xl">${agent.icon}</div>
+                        <span class="text-xs px-2 py-1 bg-green-100 text-green-800 rounded-full">${agent.status}</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">${agent.name}</h3>
+                    <p class="text-sm text-gray-600 mb-3">${agent.description}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="text-sm text-gray-500">${agent.successRate}% success rate</div>
+                        <button class="text-purple-600 hover:text-purple-800 text-sm font-medium">Use Now</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserData();
+            loadMetrics();
+            loadAgents();
+            
+            // Sidebar navigation
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
