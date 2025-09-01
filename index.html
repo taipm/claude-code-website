@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code System - Enterprise AI Development Platform</title>
+    <meta name="description" content="Revolutionize your development workflow with 13 specialized AI agents. 65% faster code reviews, automated workflows, and executive reporting.">
+    <meta name="keywords" content="AI development, code review, automated testing, GitHub integration, developer tools">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Claude Code System - Enterprise AI Development Platform">
+    <meta property="og:description" content="13 specialized AI agents for automated code review, testing, and documentation">
+    <meta property="og:image" content="https://claude-code.github.io/assets/og-image.png">
+    <meta property="og:url" content="https://claude-code.github.io">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold gradient-text">Claude Code</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-purple-600 transition">Features</a>
+                    <a href="#agents" class="text-gray-700 hover:text-purple-600 transition">Agents</a>
+                    <a href="#metrics" class="text-gray-700 hover:text-purple-600 transition">Metrics</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-purple-600 transition">Pricing</a>
+                    <a href="https://github.com/claude-code/system" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                    Supercharge Your Development with 
+                    <span class="gradient-text">AI-Powered Agents</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    13 specialized agents working together to automate code review, testing, documentation, and more. 
+                    Ship better code 65% faster with enterprise-grade quality.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center mb-12">
+                    <button onclick="showDemo()" class="bg-purple-600 text-white px-8 py-4 rounded-full text-lg hover:bg-purple-700 transition transform hover:scale-105">
+                        Watch Live Demo
+                    </button>
+                    <a href="#pricing" class="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full text-lg hover:bg-purple-600 hover:text-white transition">
+                        Start Free Trial
+                    </a>
+                </div>
+                
+                <!-- Key Metrics Bar -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl font-bold text-purple-600">65%</div>
+                        <div class="text-gray-600">Faster Reviews</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl font-bold text-purple-600">$2.5K</div>
+                        <div class="text-gray-600">ROI per Task</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl font-bold text-purple-600">95%</div>
+                        <div class="text-gray-600">Success Rate</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl font-bold text-purple-600">13</div>
+                        <div class="text-gray-600">AI Agents</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                Enterprise-Ready Features
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border rounded-xl hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Enterprise Security</h3>
+                    <p class="text-gray-600">
+                        Secure credential management, environment variables, encrypted communications, and compliance-ready architecture.
+                    </p>
+                </div>
+                
+                <div class="p-8 border rounded-xl hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Real-Time Performance</h3>
+                    <p class="text-gray-600">
+                        Advanced caching system, metrics tracking, health monitoring, and automatic performance optimization.
+                    </p>
+                </div>
+                
+                <div class="p-8 border rounded-xl hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Executive Reporting</h3>
+                    <p class="text-gray-600">
+                        Automatic task summaries, ROI calculations, business value quantification, and stakeholder dashboards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Showcase -->
+    <section id="agents" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-6">
+                13 Specialized AI Agents
+            </h2>
+            <p class="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+                Each agent is expertly designed for specific tasks, working together in coordinated workflows
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer" onclick="showAgentDetails('code-reviewer')">
+                    <div class="text-purple-600 font-bold mb-2">Code Reviewer</div>
+                    <div class="text-sm text-gray-600">Security & quality analysis</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer" onclick="showAgentDetails('python-developer')">
+                    <div class="text-purple-600 font-bold mb-2">Python Developer</div>
+                    <div class="text-sm text-gray-600">Expert Python development</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer" onclick="showAgentDetails('database-optimizer')">
+                    <div class="text-purple-600 font-bold mb-2">Database Optimizer</div>
+                    <div class="text-sm text-gray-600">Query performance tuning</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer" onclick="showAgentDetails('github-agent')">
+                    <div class="text-purple-600 font-bold mb-2">GitHub Agent</div>
+                    <div class="text-sm text-gray-600">Repository management</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer" onclick="showAgentDetails('5w2h-analyzer')">
+                    <div class="text-purple-600 font-bold mb-2">5W2H Analyzer</div>
+                    <div class="text-sm text-gray-600">Systematic analysis</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer" onclick="showAgentDetails('documentation-manager')">
+                    <div class="text-purple-600 font-bold mb-2">Documentation Manager</div>
+                    <div class="text-sm text-gray-600">Technical writing</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer" onclick="showAgentDetails('task-summary-agent')">
+                    <div class="text-purple-600 font-bold mb-2">Task Summary Agent</div>
+                    <div class="text-sm text-gray-600">Executive reporting</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer" onclick="showAgentDetails('agile-master')">
+                    <div class="text-purple-600 font-bold mb-2">Agile Master</div>
+                    <div class="text-sm text-gray-600">Sprint coordination</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="agent-user-guide.html" class="text-purple-600 hover:text-purple-700 font-semibold">
+                    View All Agents Documentation →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Metrics Dashboard -->
+    <section id="metrics" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                Real-Time Performance Metrics
+            </h2>
+            
+            <div class="bg-gradient-to-r from-purple-600 to-indigo-600 p-8 rounded-2xl text-white">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">
+                            <span id="requests-counter">0</span>
+                        </div>
+                        <div class="opacity-90">Total Requests</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">
+                            <span id="cache-rate">0</span>%
+                        </div>
+                        <div class="opacity-90">Cache Hit Rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">
+                            <span id="response-time">0</span>ms
+                        </div>
+                        <div class="opacity-90">Avg Response Time</div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-white/20">
+                    <div class="text-center">
+                        <div class="text-sm opacity-90 mb-2">System Health Status</div>
+                        <div class="flex justify-center items-center gap-2">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                            <span class="font-semibold">Operational</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-6">
+                Simple, Transparent Pricing
+            </h2>
+            <p class="text-xl text-gray-600 text-center mb-16">
+                Start free, scale as you grow
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Starter</h3>
+                    <div class="text-4xl font-bold mb-6">
+                        $99<span class="text-lg text-gray-600">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            5 AI Agents
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            1,000 requests/month
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Basic metrics
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Email support
+                        </li>
+                    </ul>
+                    <button class="w-full bg-gray-100 text-gray-700 py-3 rounded-full hover:bg-gray-200 transition">
+                        Start Free Trial
+                    </button>
+                </div>
+                
+                <!-- Professional Plan -->
+                <div class="bg-gradient-to-b from-purple-600 to-indigo-600 p-8 rounded-2xl shadow-xl text-white transform scale-105">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-2xl font-bold">Professional</h3>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Popular</span>
+                    </div>
+                    <div class="text-4xl font-bold mb-6">
+                        $499<span class="text-lg opacity-90">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            All 13 AI Agents
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            10,000 requests/month
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Advanced analytics
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Priority support
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            GitHub integration
+                        </li>
+                    </ul>
+                    <button class="w-full bg-white text-purple-600 py-3 rounded-full hover:bg-gray-100 transition font-semibold">
+                        Start Free Trial
+                    </button>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+                    <div class="text-4xl font-bold mb-6">
+                        Custom
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            All agents + custom
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Unlimited requests
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            On-premise option
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            24/7 dedicated support
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            SLA guarantee
+                        </li>
+                    </ul>
+                    <button class="w-full bg-gray-100 text-gray-700 py-3 rounded-full hover:bg-gray-200 transition">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">
+                Ready to Transform Your Development Workflow?
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+                Join leading teams already using Claude Code System
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="bg-white text-purple-600 px-8 py-4 rounded-full text-lg hover:bg-gray-100 transition font-semibold">
+                    Start 14-Day Free Trial
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg hover:bg-white hover:text-purple-600 transition">
+                    Schedule Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-bold text-xl mb-4">Claude Code</h3>
+                    <p class="text-sm">
+                        Enterprise AI development platform with 13 specialized agents
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="hover:text-white">Features</a></li>
+                        <li><a href="#agents" class="hover:text-white">Agents</a></li>
+                        <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+                        <li><a href="https://github.com/claude-code" class="hover:text-white">GitHub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="agent-user-guide.html" class="hover:text-white">Documentation</a></li>
+                        <li><a href="technical-architecture.html" class="hover:text-white">Architecture</a></li>
+                        <li><a href="#" class="hover:text-white">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2025 Claude Code System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Animate metrics on page load
+        window.addEventListener('load', () => {
+            animateCounter('requests-counter', 15420, 2000);
+            animateCounter('cache-rate', 87, 1500);
+            animateCounter('response-time', 245, 1800);
+        });
+
+        function animateCounter(id, target, duration) {
+            const element = document.getElementById(id);
+            const start = 0;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(start + (target - start) * progress);
+                element.textContent = current.toLocaleString();
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+
+        function showDemo() {
+            alert('Demo video will be integrated here');
+        }
+
+        function showAgentDetails(agent) {
+            window.location.href = `agent-details.html#${agent}`;
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

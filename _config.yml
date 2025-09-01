@@ -1,0 +1,57 @@
+# GitHub Pages Configuration
+title: Claude Code System
+description: Enterprise AI Development Platform with 13 Specialized Agents
+url: https://claude-code.github.io
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO
+author: Claude Code Team
+twitter:
+  username: claudecode
+  card: summary_large_image
+
+# Social
+social:
+  name: Claude Code System
+  links:
+    - https://github.com/claude-code
+    - https://twitter.com/claudecode
+    - https://linkedin.com/company/claude-code
+
+# Analytics (add your Google Analytics ID)
+google_analytics: UA-XXXXXXXXX-X
+
+# Collections
+collections:
+  agents:
+    output: true
+    permalink: /agents/:name/
+  docs:
+    output: true
+    permalink: /docs/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "agents"
+    values:
+      layout: "agent"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "documentation"

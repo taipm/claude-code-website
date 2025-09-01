@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agents - Claude Code System</title>
+    <meta name="description" content="Explore our 13 specialized AI agents designed for enterprise development workflows">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .agent-card {
+            transition: all 0.3s ease;
+        }
+        .agent-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold gradient-text">Claude Code</a>
+                <div class="flex items-center space-x-8">
+                    <a href="index.html#features" class="text-gray-700 hover:text-purple-600">Features</a>
+                    <a href="#agents" class="text-purple-600 font-semibold">Agents</a>
+                    <a href="index.html#pricing" class="text-gray-700 hover:text-purple-600">Pricing</a>
+                    <a href="https://github.com/claude-code/system" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">13 Specialized AI Agents</h1>
+            <p class="text-xl opacity-90">Each agent is expertly designed for specific development tasks</p>
+        </div>
+    </section>
+
+    <!-- Agents Grid -->
+    <section id="agents" class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Code Reviewer Agent -->
+                <div class="agent-card bg-white rounded-xl shadow-lg p-8" id="code-reviewer">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Code Reviewer</h3>
+                    <p class="text-gray-600 mb-4">
+                        Automated code review with security vulnerability detection, quality assessment, and best practices validation.
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Key Features:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Security vulnerability scanning</li>
+                            <li>• Code quality metrics</li>
+                            <li>• PEP 8/ESLint compliance</li>
+                            <li>• Performance optimization suggestions</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Performance:</h4>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Success Rate:</span>
+                            <span class="font-bold text-green-600">95%</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Avg Response:</span>
+                            <span class="font-bold">2-5s</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs">Read</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs">Grep</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs">Bash</span>
+                    </div>
+                </div>
+
+                <!-- Python Developer Agent -->
+                <div class="agent-card bg-white rounded-xl shadow-lg p-8" id="python-developer">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Python Developer</h3>
+                    <p class="text-gray-600 mb-4">
+                        Expert Python development with modern best practices, testing, optimization, and API development.
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Key Features:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• FastAPI/Django/Flask development</li>
+                            <li>• Unit test generation</li>
+                            <li>• Code refactoring</li>
+                            <li>• Package management</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Performance:</h4>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Success Rate:</span>
+                            <span class="font-bold text-green-600">90%</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Avg Response:</span>
+                            <span class="font-bold">3-8s</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs">Read</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs">Write</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs">Edit</span>
+                    </div>
+                </div>
+
+                <!-- Database Optimizer Agent -->
+                <div class="agent-card bg-white rounded-xl shadow-lg p-8" id="database-optimizer">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Database Optimizer</h3>
+                    <p class="text-gray-600 mb-4">
+                        Database performance optimization specialist for query tuning, index recommendations, and scalability.
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Key Features:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Slow query analysis</li>
+                            <li>• Index optimization</li>
+                            <li>• Schema recommendations</li>
+                            <li>• Performance benchmarking</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Performance:</h4>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Success Rate:</span>
+                            <span class="font-bold text-green-600">92%</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Avg Response:</span>
+                            <span class="font-bold">3-6s</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs">Read</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs">Grep</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs">Bash</span>
+                    </div>
+                </div>
+
+                <!-- GitHub Agent -->
+                <div class="agent-card bg-white rounded-xl shadow-lg p-8" id="github-agent">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">GitHub Agent</h3>
+                    <p class="text-gray-600 mb-4">
+                        GitHub integration orchestrator for repository management, PR automation, and team collaboration.
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Key Features:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Automated PR creation</li>
+                            <li>• Issue management</li>
+                            <li>• Team collaboration</li>
+                            <li>• Scientific research workflows</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Performance:</h4>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Success Rate:</span>
+                            <span class="font-bold text-green-600">96%</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Avg Response:</span>
+                            <span class="font-bold">2-8s</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">Read</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">Write</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">Bash</span>
+                    </div>
+                </div>
+
+                <!-- 5W2H Analyzer Agent -->
+                <div class="agent-card bg-white rounded-xl shadow-lg p-8" id="5w2h-analyzer">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">5W2H Analyzer</h3>
+                    <p class="text-gray-600 mb-4">
+                        Systematic problem analysis using 5W2H methodology for comprehensive understanding and planning.
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Key Features:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Root cause analysis</li>
+                            <li>• Problem decomposition</li>
+                            <li>• Solution planning</li>
+                            <li>• Risk assessment</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Performance:</h4>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Success Rate:</span>
+                            <span class="font-bold text-green-600">98%</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Avg Response:</span>
+                            <span class="font-bold">2-4s</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-xs">Read</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-xs">Write</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-xs">Edit</span>
+                    </div>
+                </div>
+
+                <!-- Task Summary Agent -->
+                <div class="agent-card bg-white rounded-xl shadow-lg p-8" id="task-summary-agent">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v1a3 3 0 003 3h0a3 3 0 003-3v-1m3-2l-3 3m0 0l-3-3m3 3V10M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Task Summary Agent</h3>
+                    <p class="text-gray-600 mb-4">
+                        Comprehensive task result synthesis and executive reporting with business value quantification.
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Key Features:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Executive summaries</li>
+                            <li>• ROI calculations</li>
+                            <li>• Progress tracking</li>
+                            <li>• Stakeholder reports</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Performance:</h4>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Success Rate:</span>
+                            <span class="font-bold text-green-600">97%</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Avg Response:</span>
+                            <span class="font-bold">2-5s</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-xs">Read</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-xs">Write</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-xs">Edit</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- More Agents -->
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-bold mb-4">Additional Specialized Agents</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-purple-600 font-semibold">Documentation Manager</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-purple-600 font-semibold">Agile Master</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-purple-600 font-semibold">Scrum Master</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-purple-600 font-semibold">Sprint Master</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-purple-600 font-semibold">Telegram Agent</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Examples -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Agent Workflow Examples</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Sequential Workflow -->
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-xl font-bold mb-4">Sequential Development Workflow</h3>
+                    <div class="flex items-center space-x-2 overflow-x-auto">
+                        <div class="bg-purple-600 text-white px-4 py-2 rounded-lg whitespace-nowrap">GitHub Agent</div>
+                        <div>→</div>
+                        <div class="bg-blue-600 text-white px-4 py-2 rounded-lg whitespace-nowrap">Python Developer</div>
+                        <div>→</div>
+                        <div class="bg-green-600 text-white px-4 py-2 rounded-lg whitespace-nowrap">Code Reviewer</div>
+                        <div>→</div>
+                        <div class="bg-indigo-600 text-white px-4 py-2 rounded-lg whitespace-nowrap">Task Summary</div>
+                    </div>
+                    <p class="mt-4 text-gray-600">
+                        Perfect for feature development: Create issue → Implement code → Review quality → Generate report
+                    </p>
+                </div>
+
+                <!-- Parallel Workflow -->
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-xl font-bold mb-4">Parallel Analysis Workflow</h3>
+                    <div class="text-center">
+                        <div class="bg-yellow-600 text-white px-4 py-2 rounded-lg inline-block mb-4">5W2H Analyzer</div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-purple-600 text-white px-4 py-2 rounded-lg">Code Reviewer</div>
+                            <div class="bg-green-600 text-white px-4 py-2 rounded-lg">Database Optimizer</div>
+                            <div class="bg-blue-600 text-white px-4 py-2 rounded-lg">Documentation Manager</div>
+                        </div>
+                        <div class="mt-4">↓</div>
+                        <div class="bg-indigo-600 text-white px-4 py-2 rounded-lg inline-block mt-4">Task Summary</div>
+                    </div>
+                    <p class="mt-4 text-gray-600">
+                        Ideal for comprehensive analysis: Problem analysis triggers parallel specialized reviews
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Automate Your Development Workflow?</h2>
+            <p class="text-xl mb-8 opacity-90">
+                Start using our 13 specialized agents today
+            </p>
+            <button class="bg-white text-purple-600 px-8 py-4 rounded-full text-lg hover:bg-gray-100 transition font-semibold">
+                Start Free Trial
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Claude Code System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Highlight agent based on URL hash
+        if (window.location.hash) {
+            const agent = document.querySelector(window.location.hash);
+            if (agent) {
+                agent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                agent.classList.add('ring-4', 'ring-purple-400');
+            }
+        }
+    </script>
+</body>
+</html>
